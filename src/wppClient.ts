@@ -16,28 +16,27 @@ if (savedPort) {
   delete process.env.PORT;
 }
 
-const clientPromise = wppconnect
-  .initServer({
-    port: Number(WPP_PORT),
-    secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
-    session: process.env.SESSION_NAME,
-    startAllSession: false,
-  })
-  .then((client: any) => {
+const clientPromise = (async () => {
+  try {
+    const client: any = await wppconnect.initServer({
+      port: Number(WPP_PORT),
+      secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
+      session: process.env.SESSION_NAME,
+      startAllSession: false,
+    });
     // Restore the original Express port after the internal server is up.
     if (savedPort) {
       process.env.PORT = savedPort;
     }
     return client;
-  })
-  .catch((err: any) => {
-    // If the server is already running (cold-start race) just continue.
+  } catch (err: any) {
     if (err?.code === 'EADDRINUSE') {
       console.warn('WPPConnect internal server already running on', WPP_PORT);
       return null;
     }
     throw err;
-  });
+  }
+})();
 
 export const wppReady = clientPromise;
 
