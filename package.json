@@ -1,0 +1,33 @@
+{
+  "name": "wppconnect-server-render",
+  "version": "1.0.0",
+  "description": "WPPConnect Server boilerplate ready for Render.com deployment.",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts"
+  },
+  "keywords": [
+    "wppconnect",
+    "render",
+    "typescript",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.24.0",
+    "@wppconnect/server": "^2.8.6",
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "prom-client": "^15.1.0",
+    "puppeteer": "^24.12.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,538 @@
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:24:49.155Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:24:49.158Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:24:49.159Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:25:07.034Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:25:07.037Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:25:07.037Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:26:34.961Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:26:34.963Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:26:34.964Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:28:40.061Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:28:40.073Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:28:40.075Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:35:50.973Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:35:50.976Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:35:50.976Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:38:10.257Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:38:10.260Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:38:10.260Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:41:44.035Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:41:44.037Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:41:44.037Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:43:20.533Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:43:20.537Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:43:20.540Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:45:23.741Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:45:23.744Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:45:23.745Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:47:30.692Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:47:30.695Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:47:30.696Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:51:15.354Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:51:15.357Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:51:15.358Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:54:54.303Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:54:54.307Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:54:54.307Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T22:59:58.005Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T22:59:58.008Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T22:59:58.009Z'
+}
+{
+  level: 'error',
+  message: 'phone is not iterable',
+  stack: 'TypeError: phone is not iterable\n' +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:99:27)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:00:16.402Z'
+}
+{
+  level: 'error',
+  message: 'phone is not iterable',
+  stack: 'TypeError: phone is not iterable\n' +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:99:27)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:00:28.339Z'
+}
+{
+  level: 'error',
+  message: 'phone is not iterable',
+  stack: 'TypeError: phone is not iterable\n' +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:99:27)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:00:28.409Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T23:02:19.936Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T23:02:19.940Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T23:02:19.940Z'
+}
+{
+  level: 'error',
+  message: "Cannot read properties of undefined (reading 'sendText')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'sendText')\n" +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:100:37)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:02:22.916Z'
+}
+{
+  level: 'error',
+  message: "Cannot read properties of undefined (reading 'sendText')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'sendText')\n" +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:100:37)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:02:23.860Z'
+}
+{
+  level: 'error',
+  message: "Cannot read properties of undefined (reading 'sendText')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'sendText')\n" +
+    '    at sendMessage (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\messageController.js:100:37)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at statusConnection (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\statusConnection.js:70:5)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-11T23:02:24.120Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-11T23:03:45.042Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-11T23:03:45.047Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-11T23:03:45.048Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-12T12:21:51.710Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-12T12:21:51.722Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-12T12:21:51.723Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-12T12:36:43.511Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-12T12:36:43.514Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-12T12:36:43.515Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-12T12:38:07.527Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-12T12:38:07.531Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-12T12:38:07.532Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:46:49.186Z'
+}
+{
+  message: 'browserClose\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:47:50.139Z'
+}
+{
+  message: 'qrReadError\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:47:50.408Z'
+}
+{
+  message: 'Auto Close Called',
+  level: 'error',
+  timestamp: '2025-07-12T13:47:50.417Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:51:18.686Z'
+}
+{
+  message: 'browserClose\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:52:19.350Z'
+}
+{
+  message: 'qrReadError\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T13:52:19.537Z'
+}
+{
+  message: 'Auto Close Called',
+  level: 'error',
+  timestamp: '2025-07-12T13:52:19.540Z'
+}
+{
+  level: 'error',
+  message: 'req.client.close is not a function',
+  stack: 'TypeError: req.client.close is not a function\n' +
+    '    at closeSession (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\sessionController.js:251:24)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-12T14:00:26.397Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:00:30.811Z'
+}
+{
+  message: 'browserClose\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:01:31.475Z'
+}
+{
+  message: 'qrReadError\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:01:31.774Z'
+}
+{
+  message: 'Auto Close Called',
+  level: 'error',
+  timestamp: '2025-07-12T14:01:31.775Z'
+}
+{
+  level: 'error',
+  message: 'req.client.close is not a function',
+  stack: 'TypeError: req.client.close is not a function\n' +
+    '    at closeSession (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\controller\\sessionController.js:251:24)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\Wesley\\CascadeProjects\\wppconnect-server-render\\node_modules\\@wppconnect\\server\\dist\\middleware\\auth.js:75:11',
+  timestamp: '2025-07-12T14:02:54.584Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:02:59.604Z'
+}
+{
+  message: 'browserClose\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:04:00.124Z'
+}
+{
+  message: 'qrReadError\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:04:00.502Z'
+}
+{
+  message: 'Auto Close Called',
+  level: 'error',
+  timestamp: '2025-07-12T14:04:00.503Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:04:14.864Z'
+}
+{
+  message: 'browserClose\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:05:15.414Z'
+}
+{
+  message: 'qrReadError\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:05:15.804Z'
+}
+{
+  message: 'Auto Close Called',
+  level: 'error',
+  timestamp: '2025-07-12T14:05:15.808Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:03.168Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:03.177Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:03.178Z'
+}
+{
+  message: 'Server is running on port: 21466',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:26.167Z'
+}
+{
+  message: '\x1B[31m Visit http://localhost:21466/api-docs for Swagger docs',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:26.170Z'
+}
+{
+  message: 'WPPConnect-Server version: 2.8.6',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:26.171Z'
+}
+{
+  message: 'notLogged\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:08:48.029Z'
+}
+{
+  message: 'qrReadSuccess\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:06.835Z'
+}
+{
+  message: '[NERDWHATS_AMERICA] 0% - Loading your chats',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:07.008Z'
+}
+{
+  message: 'Started Session: NERDWHATS_AMERICA',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:08.063Z'
+}
+{
+  message: 'State Change PAIRING: NERDWHATS_AMERICA',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:08.245Z'
+}
+{
+  message: 'State Change CONNECTED: NERDWHATS_AMERICA',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:08.248Z'
+}
+{
+  message: '[NERDWHATS_AMERICA] 100% - Loading your chats',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:09.983Z'
+}
+{
+  message: 'inChat\n\n',
+  level: 'info',
+  timestamp: '2025-07-12T14:09:10.036Z'
+}
