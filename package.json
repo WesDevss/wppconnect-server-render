@@ -4,6 +4,7 @@
   "description": "WPPConnect Server boilerplate ready for Render.com deployment.",
   "main": "dist/server.js",
   "scripts": {
+    "postinstall": "npx puppeteer browsers install chrome",
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node src/server.ts"
