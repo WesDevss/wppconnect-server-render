@@ -1,4 +1,6 @@
-import wppconnect from '@wppconnect/server';
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const wppconnect = require('@wppconnect/server');
 
 /**
  * Singleton responsible for starting the internal WPPConnect HTTP server **once** when the
