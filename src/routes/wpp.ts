@@ -10,10 +10,14 @@ const router = Router();
 const internalApi = (path: string) => `http://localhost:${WPP_PORT}/api/${process.env.SESSION_NAME}${path}`;
 
 let client: any | null = null;
+let initializing = false;
 let bearerToken: string | null = process.env.WPP_TOKEN ? process.env.WPP_TOKEN.split(':')[1] : null;
 
 // Inicia a sessão e devolve o QR Code em texto (base64)
 router.get('/start', async (_req, res) => {
+  if (initializing) {
+    return res.json({ status: 'initializing' });
+  }
   if (client && (client as any).status === 'CONNECTED') {
     return res.json({ status: 'already_connected' });
   }
@@ -51,35 +55,31 @@ router.get('/start', async (_req, res) => {
         }
         // devolve QR como string para o front renderizar se resposta ainda não foi enviada
         if (!res.headersSent) {
-          res.json({ qr });
-        }
-
-        // gera token automaticamente (e inicia sessão oficialmente em seguida)
-        try {
-          const tokenResp = await axios.post(`${internalApi(`/${secretKey}/generate-token`)}`);
-          if (tokenResp.data?.token) {
-            bearerToken = tokenResp.data.token;
-            console.log('Generated bearer token:', bearerToken);
-
-            // inicia sessão explicitamente (waitQrCode true faz o servidor devolver qr no body também)
-            try {
-              await axios.post(
-                `${internalApi('/start-session')}`,
-                { waitQrCode: true },
-                { headers: { Authorization: `Bearer ${bearerToken}` } }
-              );
-            } catch (e) {
-              console.error('Erro ao start-session', (e as any).response?.data || (e as any).message);
-            }
-          }
-        } catch (e) {
-          console.error('Não foi possível gerar token automaticamente', e);
+          res.json({ qr: 'data:image/png;base64,' + qr });
         }
       }
     });
 
+    // Após o servidor interno estar de pé, gera token e inicia a sessão
+    try {
+      const tokenResp = await axios.post(`${internalApi(`/${secretKey}/generate-token`)}`);
+      if (tokenResp.data?.token) {
+        bearerToken = tokenResp.data.token;
+        console.log('Generated bearer token:', bearerToken);
+        await axios.post(
+          `${internalApi('/start-session')}`,
+          { waitQrCode: true },
+          { headers: { Authorization: `Bearer ${bearerToken}` } }
+        );
+      }
+    } catch (e) {
+      console.error('Falha pós-init para gerar token ou start-session', (e as any).response?.data || (e as any).message);
+    }
+
     // Restore public PORT for Express after WPPConnect has started
     if (renderPort) process.env.PORT = renderPort;
+
+    initializing = false;
 
     // fetch QR from internal API if catchQR didn't send
     const intervalId = setInterval(async () => {
@@ -104,6 +104,8 @@ router.get('/start', async (_req, res) => {
   } catch (err) {
     console.error('Erro ao iniciar sessão:', err);
     res.status(500).json({ error: 'cannot_start_session' });
+  } finally {
+    initializing = false;
   }
 });
 
