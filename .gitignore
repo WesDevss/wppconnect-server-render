@@ -1,5 +1,16 @@
+# Node / build
 node_modules/
 dist/
 userDataDir/
 tokens/
+log/
+qr.png
+WhatsAppImages/
+
+# Env files
 .env
+
+# Logs
+*.log
+
+# others...
