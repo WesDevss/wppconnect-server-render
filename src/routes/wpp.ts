@@ -1,8 +1,13 @@
 import { Router } from 'express';
+// Define an internal port for the WPPConnect server to avoid clashing with the public PORT injected by Render
+const WPP_PORT = process.env.WPP_INTERNAL_PORT || '21466';
 // @ts-ignore
 const wppconnect = require('@wppconnect/server');
 
 const router = Router();
+
+// Helper to compose internal API URLs
+const internalApi = (path: string) => `http://localhost:${WPP_PORT}/api/${process.env.SESSION_NAME}${path}`;
 
 let client: any | null = null;
 let bearerToken: string | null = process.env.WPP_TOKEN ? process.env.WPP_TOKEN.split(':')[1] : null;
@@ -17,7 +22,7 @@ router.get('/start', async (_req, res) => {
   if (client && (client as any).status !== 'CONNECTED') {
     try {
       const response = await axios.get(
-        `http://localhost:21466/api/${process.env.SESSION_NAME}/qrcode-session`,
+        `http://localhost:${WPP_PORT}/api/${process.env.SESSION_NAME}/qrcode-session`,
         bearerToken ? { headers: { Authorization: `Bearer ${bearerToken}` } } : undefined
       );
       if (response.data?.qrcode) {
@@ -30,10 +35,14 @@ router.get('/start', async (_req, res) => {
 
   try {
     const secretKey = process.env.WPP_SECRET || 'THISISMYSECURETOKEN';
+    // Remove public PORT so wppconnect doesn't try to reuse it
+    const renderPort = process.env.PORT;
+    delete process.env.PORT;
+
     client = await wppconnect.initServer({
       // evita iniciar sessões automaticamente e marcar como already_connected
       startAllSession: false,
-      port: 21466,
+      port: Number(WPP_PORT),
       secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
       session: process.env.SESSION_NAME,
       catchQR: async (qr: string) => {
@@ -47,7 +56,7 @@ router.get('/start', async (_req, res) => {
 
         // gera token automaticamente (e inicia sessão oficialmente em seguida)
         try {
-          const tokenResp = await axios.post(`http://localhost:21466/api/${process.env.SESSION_NAME}/${secretKey}/generate-token`);
+          const tokenResp = await axios.post(`${internalApi(`/${secretKey}/generate-token`)}`);
           if (tokenResp.data?.token) {
             bearerToken = tokenResp.data.token;
             console.log('Generated bearer token:', bearerToken);
@@ -55,7 +64,7 @@ router.get('/start', async (_req, res) => {
             // inicia sessão explicitamente (waitQrCode true faz o servidor devolver qr no body também)
             try {
               await axios.post(
-                `http://localhost:21466/api/${process.env.SESSION_NAME}/start-session`,
+                `${internalApi('/start-session')}`,
                 { waitQrCode: true },
                 { headers: { Authorization: `Bearer ${bearerToken}` } }
               );
@@ -69,6 +78,9 @@ router.get('/start', async (_req, res) => {
       }
     });
 
+    // Restore public PORT for Express after WPPConnect has started
+    if (renderPort) process.env.PORT = renderPort;
+
     // fetch QR from internal API if catchQR didn't send
     const intervalId = setInterval(async () => {
       if (res.headersSent) {
@@ -78,7 +90,7 @@ router.get('/start', async (_req, res) => {
 
       try {
         const response = await axios.get(
-          `http://localhost:21466/api/${process.env.SESSION_NAME}/qrcode-session`,
+          `${internalApi('/qrcode-session')}`,
           bearerToken ? { headers: { Authorization: `Bearer ${bearerToken}` } } : undefined
         );
         if (response.data?.qrcode) {
@@ -108,7 +120,7 @@ router.get('/send', async (req, res) => {
   if (!bearerToken) {
     try {
       const secretKey = process.env.WPP_SECRET || 'THISISMYSECURETOKEN';
-      const tokenResp = await axios.post(`http://localhost:21466/api/${sess}/${secretKey}/generate-token`);
+      const tokenResp = await axios.post(`${internalApi(`/${secretKey}/generate-token`)}`);
       if (tokenResp.data?.token) {
         bearerToken = tokenResp.data.token;
       }
@@ -122,7 +134,7 @@ router.get('/send', async (req, res) => {
     const token = bearerToken;
     console.log('Bearer token to send:', token);
     const response = await axios.post(
-      `http://localhost:21466/api/${sess}/send-message`,
+      `${internalApi('/send-message')}`,
       { phone: [phone], message: text },
       token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
     );
