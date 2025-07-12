@@ -43,7 +43,8 @@ router.get('/start', async (_req, res) => {
     const renderPort = process.env.PORT;
     delete process.env.PORT;
 
-    client = await wppconnect.initServer({
+    try {
+      client = await wppconnect.initServer({
       // evita iniciar sessões automaticamente e marcar como already_connected
       startAllSession: false,
       port: Number(WPP_PORT),
@@ -59,6 +60,13 @@ router.get('/start', async (_req, res) => {
         }
       }
     });
+    } catch (err: any) {
+      if (err?.code === 'EADDRINUSE') {
+        console.warn('WPPConnect internal server already running on', WPP_PORT);
+      } else {
+        throw err;
+      }
+    }
 
     // Após o servidor interno estar de pé, gera token e inicia a sessão
     try {
