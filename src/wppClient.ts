@@ -1,10 +1,11 @@
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const wppconnect = require('@wppconnect/server');
-// Ensure we point to Puppeteer's Chromium that was installed during postinstall
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const puppeteer = require('puppeteer');
+// Determine the path to the Chromium binary downloaded by Puppeteer and export to env before wppconnect loads anything
+const executablePath = puppeteer.executablePath();
+process.env.CHROME_PATH = executablePath;
+process.env.PUPPETEER_EXECUTABLE_PATH = executablePath;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const wppconnect = require('@wppconnect/server');
 
 /**
  * Singleton responsible for starting the internal WPPConnect HTTP server **once** when the
@@ -20,9 +21,7 @@ if (savedPort) {
   delete process.env.PORT;
 }
 
-const executablePath = puppeteer.executablePath();
-// Ensure wppconnect and chrome-launcher locate the binary
-process.env.CHROME_PATH = executablePath;
+
 const clientPromise = (async () => {
   try {
     const client: any = await wppconnect.initServer({
@@ -30,10 +29,8 @@ const clientPromise = (async () => {
       secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
       session: process.env.SESSION_NAME,
       startAllSession: false,
-      createOptions: {
-        browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
-        executablePath,
-      }
+      browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath
     });
     // Restore the original Express port after the internal server is up.
     if (savedPort) {
