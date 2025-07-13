@@ -82,4 +82,52 @@ router.get('/send', async (req, res) => {
   }
 });
 
+/* Simple HTML page to display QR code visually */
+router.get('/scan', (req, res) => {
+  // Optional force refresh
+  const forceFlag = (req.query.force as string) === 'true' ? '?force=true' : '';
+
+  res.setHeader('Content-Type', 'text/html');
+  res.send(`<!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="utf-8" />
+      <title>QR Code – WPPConnect</title>
+      <style>
+        body{font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;background:#f7f7f7;color:#333}
+        #qr{width:300px;height:300px;border:1px solid #ddd;margin-top:16px}
+        #msg{margin-top:8px}
+        button{margin-top:12px;padding:6px 12px;font-size:14px}
+      </style>
+    </head>
+    <body>
+      <h2>Escaneie o QR no WhatsApp</h2>
+      <div id="msg">Carregando...</div>
+      <img id="qr" src="" alt="QR Code"/>
+      <button onclick="getQr(true)">Forçar novo QR</button>
+      <script>
+        async function getQr(force){
+          document.getElementById('msg').innerText='Carregando...';
+          document.getElementById('qr').src='';
+          try{
+            const r=await fetch('/wpp/start'+(force?'?force=true':''));
+            const data=await r.json();
+            if(data.qr){
+              document.getElementById('qr').src=data.qr;
+              document.getElementById('msg').innerText='Aponte a câmera do WhatsApp';
+            }else if(data.status==='already_connected'){
+              document.getElementById('msg').innerText='Sessão já está conectada';
+            }else{
+              document.getElementById('msg').innerText='QR não disponível, tente novamente';
+            }
+          }catch(e){
+            document.getElementById('msg').innerText='Erro ao obter QR';
+          }
+        }
+        getQr(false);
+      </script>
+    </body>
+  </html>`);
+});
+
 export default router;
