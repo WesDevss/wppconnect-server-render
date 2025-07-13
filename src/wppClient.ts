@@ -21,6 +21,8 @@ if (savedPort) {
 }
 
 const executablePath = puppeteer.executablePath();
+// Ensure wppconnect and chrome-launcher locate the binary
+process.env.CHROME_PATH = executablePath;
 const clientPromise = (async () => {
   try {
     const client: any = await wppconnect.initServer({
@@ -28,8 +30,10 @@ const clientPromise = (async () => {
       secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
       session: process.env.SESSION_NAME,
       startAllSession: false,
-      browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
-      executablePath
+      createOptions: {
+        browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+        executablePath,
+      }
     });
     // Restore the original Express port after the internal server is up.
     if (savedPort) {
