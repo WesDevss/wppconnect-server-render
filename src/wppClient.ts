@@ -54,7 +54,15 @@ const clientPromise = (async () => {
       // Puppeteer launch options with explicit Chromium path
       createOptions: {
         executablePath,
-        browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+        browserArgs: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--no-zygote',
+          '--single-process',
+          `--user-data-dir=/tmp/${process.env.SESSION_NAME || 'wpp-session'}`
+        ],
       }
       
     });
