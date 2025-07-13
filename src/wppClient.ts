@@ -7,7 +7,7 @@ const CHROME_BUILD = '138.0.7204.94'; // same version Puppeteer expects
 const CACHE_DIR = '/tmp/chrome-cache';
 const BIN_PATH = path.join(
   CACHE_DIR,
-  'chromium',
+  'chrome',
   `linux-${CHROME_BUILD}`,
   'chrome-linux64',
   'chrome'
