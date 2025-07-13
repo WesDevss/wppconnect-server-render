@@ -130,4 +130,69 @@ router.get('/scan', (req, res) => {
   </html>`);
 });
 
+/* POST /wpp/register-webhook { webhook: "https://..." } */
+router.post('/register-webhook', async (req, res) => {
+  const { webhook } = req.body as { webhook?: string };
+  if (!webhook) return res.status(400).json({ error: 'missing_webhook' });
+  await wppReady;
+  const token = await ensureToken();
+  try {
+    await axios.post(
+      internalApi('/register-webhook'),
+      { webhook },
+      token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
+    );
+    return res.json({ status: 'registered' });
+  } catch (err: any) {
+    console.error('Erro em /wpp/register-webhook:', err.response?.data || err.message);
+    return res.status(500).json({ error: 'register_fail' });
+  }
+});
+
+/* Simple HTML page to register n8n webhook */
+router.get('/webhook', (_req, res) => {
+  res.setHeader('Content-Type', 'text/html');
+  res.send(`<!DOCTYPE html>
+  <html lang="pt-BR">
+    <head>
+      <meta charset="utf-8" />
+      <title>Registrar Webhook – WPPConnect</title>
+      <style>
+        body{font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;background:#f0f2f5;color:#333}
+        form{display:flex;flex-direction:column;width:320px}
+        input{padding:8px;border:1px solid #ccc;border-radius:4px}
+        button{margin-top:10px;padding:8px;border:none;background:#0a7cff;color:#fff;border-radius:4px;font-size:15px;cursor:pointer}
+        #msg{margin-top:12px;height:20px;text-align:center}
+      </style>
+    </head>
+    <body>
+      <h2>Registrar Webhook no n8n</h2>
+      <form id="f">
+        <input id="url" type="url" placeholder="https://n8n.example/webhook/..." required />
+        <button type="submit">Registrar</button>
+      </form>
+      <div id="msg"></div>
+      <script>
+        document.getElementById('f').addEventListener('submit',async e=>{
+          e.preventDefault();
+          const url=document.getElementById('url').value.trim();
+          if(!url)return;
+          document.getElementById('msg').innerText='Enviando...';
+          try{
+            const r=await fetch('/wpp/register-webhook',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({webhook:url})});
+            const d=await r.json();
+            if(d.status==='registered'){
+              document.getElementById('msg').innerText='Webhook registrado com sucesso!';
+            }else{
+              document.getElementById('msg').innerText=d.error||'Falha ao registrar';
+            }
+          }catch(err){
+            document.getElementById('msg').innerText='Erro ao registrar';
+          }
+        });
+      </script>
+    </body>
+  </html>`);
+});
+
 export default router;
