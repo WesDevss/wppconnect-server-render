@@ -24,7 +24,7 @@
     "express": "^4.19.2",
     "prom-client": "^15.1.0",
     "puppeteer": "^24.12.1",
-    "@puppeteer/browsers": "^1.10.2"
+    "@puppeteer/browsers": "^2.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
