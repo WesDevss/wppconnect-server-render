@@ -16,7 +16,8 @@ async function ensureToken() {
 }
 
 /* GET /wpp/start */
-router.get('/start', async (_req, res) => {
+router.get('/start', async (req, res) => {
+  const force = (req.query.force as string) === 'true';
   await wppReady;
   try {
     const token = await ensureToken();
@@ -35,6 +36,23 @@ router.get('/start', async (_req, res) => {
       token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
     );
     if (qr.qrcode) return res.json({ qr: `data:image/png;base64,${qr.qrcode}` });
+
+    // As último recurso: tente fechar e reiniciar uma vez
+    try {
+      await axios.delete(
+        internalApi('/close-session'),
+        token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
+      );
+      const { data: retry } = await axios.post(
+        internalApi('/start-session'),
+        { waitQrCode: true },
+        token ? { headers: { Authorization: `Bearer ${token}` } } : undefined
+      );
+      if (retry.qrcode)
+        return res.json({ qr: `data:image/png;base64,${retry.qrcode}` });
+    } catch (_) {
+      /* swallow */
+    }
 
     return res.status(500).json({ error: 'qr_not_available' });
   } catch (err: any) {
