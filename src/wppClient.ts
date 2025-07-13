@@ -51,6 +51,8 @@ const clientPromise = (async () => {
       secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
       session: process.env.SESSION_NAME,
       startAllSession: false,
+      autoClose: 0,
+      respawn: false,
       // Puppeteer launch options with explicit Chromium path
       createOptions: {
         executablePath,
