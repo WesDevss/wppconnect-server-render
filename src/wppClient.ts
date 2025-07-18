@@ -3,7 +3,8 @@ import path from 'path';
 import { install, Browser } from '@puppeteer/browsers';
 
 // ---------- Runtime Chromium download (Render Free tier) ----------
-const CHROME_BUILD = '138.0.7204.94'; // same version Puppeteer expects
+// Updated to latest stable on 2025-07-13
+const CHROME_BUILD = '138.0.7204.101'; // same version Puppeteer expects
 const CACHE_DIR = '/tmp/chrome-cache';
 const BIN_PATH = path.join(
   CACHE_DIR,
@@ -51,7 +52,7 @@ const clientPromise = (async () => {
       secretKey: process.env.WPP_SECRET || 'THISISMYSECURETOKEN',
       session: process.env.SESSION_NAME,
       startAllSession: false,
-      autoClose: 0,
+      autoClose: 1800,
       respawn: false,
       // Puppeteer launch options with explicit Chromium path
       createOptions: {
